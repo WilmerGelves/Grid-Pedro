@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&display=swap');
 body{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 1080px;
     background-color: rgb(15, 19, 35);
+    box-sizing: border-box;
+    
 }
 
 .contenedor{ 
-    margin: 1.25em 30px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.25em;
 }
 
 .contenedor__superior{
@@ -22,8 +28,13 @@ body{
     padding: 1.25em;
     border-radius: 0.625em;
 }
+
 .element{
     border-radius: 0.625em;
+}
+.element:hover{
+    outline: 0.2em solid rgb(15, 19, 35);
+    transform: scale(1.03);
 }
 .sup-izq{
     grid-area: izquierda;
@@ -53,9 +64,7 @@ body{
 }
 .inferior{
     width: 100%;
-    height: 100%;
 }
-
 .contenedor__superior{
     grid-template-areas: 
     "izquierda derecha"
@@ -64,11 +73,49 @@ body{
     "bajo bajo";
 }
 
-.contenedor-inferior{
+
+/*Estilos contenedor inferior */
+.contenedor__inferior{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
-
+    width: 75%;
+    column-gap: 1.25em;
+    row-gap: 1.25em;
+    background-color: black;
+    padding: 1.25em;
+    border-radius: 0.625em;
 }
 
 
+.primero{
+    grid-area: primero;
+}
+.inf-izq{
+    width:100%;
+    height: 100%;
+}
+.segundo{
+    grid-area: segundo;
+}
+.inf-der{
+    width:100%;
+    height: 97%;
+}
+.tecero{
+    grid-area: tercero;
+}
+.inf-video{
+    width:100%;
+}
+.contenedor__inferior{
+    grid-template-areas: 
+    "primero segundo"
+    "tercero segundo";
+}
+
+footer{
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: 0.05em;
+    color: white;
+}
